@@ -12,7 +12,7 @@ function App() {
   const [cart, setCart] = useState([]);
 
   const addToCart = (product) => {
-    console.log("From App.js > addToCart:", existingItem)
+    // console.log("From App.js > addToCart:", existingItem)
     const existingItem = cart.find((item) => item.id === product.id);
     if (existingItem) {
       setCart((prevCart) =>

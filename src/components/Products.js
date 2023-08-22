@@ -22,35 +22,7 @@ function Products({cart,addToCart}) {
     fetchApiData(API);
   }, []);
 
-  // const addToCart = (product) => {
-  //   const existingItem = cart.find((item) => item.id === product.id);
-  //   if (existingItem) {
-  //     setCart((prevcart) =>
-  //       prevcart.map((item) =>
-  //         item.id === product.id
-  //           ? { ...item, quantity: item.quantity + 1 }
-  //           : item
-  //       )
-  //     );
-  //   } else {
-  //     setCart((prevCart) => [...prevCart, { ...product, quantity: 1 }]);
-  //   }
-  // };
-//   const Loading = () => {
-//     return <>Loading...</>;
-//   };
-//   const showProducts = () => {
-//     return (
-//       <div className="flex flex-row justify-center">
-//         <button className="btn btn-outline-dark">All</button>
-//         <button className="btn btn-outline-dark me-2">Man's Cloathing</button>
-//         <button className="btn btn-outline-dark me-2">Women's Cloathing</button>
-//         <button className="btn btn-outline-dark">Jwelary</button>
-//         <button className="btn btn-outline-dark">Electronic</button>
-//         <button className="btn btn-outline-dark">hdkuhd</button>
-//       </div>
-//     );
-//   };
+  
   return (
     <>
       <div className="flex-1">
@@ -65,11 +37,11 @@ function Products({cart,addToCart}) {
         <div className=" justify-content center">
           {/* {loading ? <Loading /> : <showProducts />} */}
         </div>
-        <ul className="">
+        <ul className="flex flex-wrap justify-center">
           {data.map((product) => (
-            <li>
+            <li className="h-[400px] w-[400px] ml-16 mb-12 flex flex-col px-2 py-2 rounded space-x-8 border-2 shadow-md">
             <ProductCard key={product.id} product={product} addToCart={addToCart} />
-            <Link to={`/products/${product.id}`}>{product.title}</Link>
+            {/* <Link to={`/products/${product.id}`}>{product.title}</Link> */}
 
             </li>
             // <li key={product.id}>
